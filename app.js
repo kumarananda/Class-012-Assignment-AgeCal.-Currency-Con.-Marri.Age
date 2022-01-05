@@ -7,6 +7,19 @@ const ageresult = document.querySelector("#ageresult");
 
 // console.log(agecheck);
 
+agename.addEventListener("blur", () => {
+    if (agename.value == "") {
+        agename.style.border = "1px solid red";
+
+    }
+});
+ageyear.addEventListener("blur", () => {
+    if (ageyear.value == "") {
+        ageyear.style.border = "1px solid red";
+
+    }
+});
+
 agecheck.addEventListener('click', () => {
 
     if(agename.value == '' || ageyear.value == ''){
@@ -104,7 +117,22 @@ const marSelect = document.getElementById('marSelect');
 // const marButton = document.getElementById('marButton');
 const marResult = document.getElementById('marResult');
 
-console.log(marName.value);
+// console.log(marName.value);
+
+
+marName.addEventListener('blur', () => {
+    if(marName.value == ""){
+        marName.style.border = "1px solid red";
+
+    }
+});
+marYear.addEventListener('blur', () => {
+    if(marYear.value == ""){
+        marYear.style.border = "1px solid red";
+
+    }
+});
+
 
 let namePattran = /^[a-zA-Z ]*$/;
 let birthYearpattran = /^[0-9]{4}$/;
