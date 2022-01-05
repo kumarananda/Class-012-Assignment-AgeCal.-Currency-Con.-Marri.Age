@@ -1,23 +1,23 @@
 // 1. Age Calculator with age status alert by using DOM  
 
-const name = document.querySelector('#name');
-const year = document.querySelector('#year');
+const agename = document.querySelector('#agename');
+const ageyear = document.querySelector('#ageyear');
 const agecheck = document.querySelector('#agecheck');
-const result = document.querySelector("#result");
+const ageresult = document.querySelector("#ageresult");
 
 // console.log(agecheck);
 
 agecheck.addEventListener('click', () => {
 
-    if(name.value == '' || year.value == ''){
-        result.innerHTML =`<p class="alert alert-denger">All filds are require</p>`
+    if(agename.value == '' || ageyear.value == ''){
+        ageresult.innerHTML =`<p class="alert alert-denger">All filds are require</p>`
     }else{
-        result.innerHTML = agecal(name.value, year.value);
+        ageresult.innerHTML = agecal(agename.value, ageyear.value);
     
     //form will empty after calculation 
     //when we set empty value after declearation
-    name.value = "";
-    year.value = "";
+    agename.value = "";
+    ageyear.value = "";
     }
     
 })
@@ -132,6 +132,85 @@ marFormSubmit.addEventListener('submit', (event) => {
 
 });
 
+
+// Sign Up Form
+
+const signup_form = document.querySelector('#signup_form');
+const name = document.querySelector('#name');
+const email = document.querySelector('#email');
+const uname = document.querySelector('#uname');
+const msg = document.querySelector('.msg');
+
+const reqname = document.querySelector('#reqname');
+const reqemail = document.querySelector('#reqemail');
+
+
+
+// signup_form.addEventListener('submit', function (event) {
+//         event.preventDefault();
+
+//         if(name.value == "" || email.value == "" || uname.value == ""){
+//             alert('All fileds are required');
+//         }else{
+//             alert('Done')
+//         }
+
+//     });
+
+// fast way
+// signup_form.addEventListener();
+
+
+
+signup_form.onsubmit = (event) => {
+    event.preventDefault();
+
+
+    if(email.value == ""){
+        reqemail.innerHTML = `<p id='reqname' style="display:block; visibility: visible ;">Email is required</p>`
+    }else{
+        reqemail.innerHTML = `<p id='reqname' style="display:none; visibility: hidden ;">Email is required</p>`
+    }
+
+    // name.style = (name.value == "") ? style= "border:1px solid red" : style= "border:1px solid #212529" ;
+    // email.style = (email.value == "") ? style= "border:1px solid red" : style= "border:1px solid #212529" ;
+    // uname.style = (uname.value == "") ? style= "border:1px solid red" : style= "border:1px solid #212529" ;
+
+    if(name.value == ""){
+        name.style = `border:1px solid red`;
+        name.placeholder ='name is required';
+        reqname.innerHTML =`<p id='reqname' style="display:block; visibility: visible ;">Name is required</p>`;
+    }else{
+        name.style = `border:1px solid #212529;`;
+        name.placeholder ='name';
+        reqname.innerHTML =`<p id='reqname' style="display:none; visibility: hidden;"></p>`
+     
+    }
+
+    if(email.value == ""){
+        email.style = `border:1px solid red`;
+        email.placeholder ='email is required';
+    }else{
+        email.style = `border:1px solid #212529;`;
+        email.placeholder ='email';
+    }
+    if(uname.value == ""){
+        uname.style = `border:1px solid red`;
+        uname.placeholder ='username is required';
+    }else{
+        uname.style = `border:1px solid #212529;`;
+        uname.placeholder ='username';
+    }
+
+
+    if(name.value == "" || email.value == "" || uname.value == ""){
+        msg.innerHTML = `<p class="alert alert-danger">All fileds are required!</p>`
+    }else{
+        msg.innerHTML = `<p class="alert alert-success">Data Stable!</p>`
+    }
+
+
+}
 
 
 
