@@ -172,6 +172,24 @@ const msg = document.querySelector('.msg');
 const reqname = document.querySelector('#reqname');
 const reqemail = document.querySelector('#reqemail');
 
+name.addEventListener('blur', () => {
+    if (name.value == "") {
+        name.style.border = "1px solid red";
+
+    }
+});
+email.addEventListener('blur', () => {
+    if (email.value == "") {
+        email.style.border = "1px solid red";
+
+    }
+});
+uname.addEventListener('blur', () => {
+    if (uname.value == "") {
+        uname.style.border = "1px solid red";
+
+    }
+});
 
 
 // signup_form.addEventListener('submit', function (event) {
@@ -195,9 +213,9 @@ signup_form.onsubmit = (event) => {
 
 
     if(email.value == ""){
-        reqemail.innerHTML = `<p id='reqname' style="display:block; visibility: visible ;">Email is required</p>`
+        reqemail.innerHTML = `<p id='reqname' style="color:red">Email is required</p>`
     }else{
-        reqemail.innerHTML = `<p id='reqname' style="display:none; visibility: hidden ;">Email is required</p>`
+        reqemail.innerHTML = `<p></p>`
     }
 
     // name.style = (name.value == "") ? style= "border:1px solid red" : style= "border:1px solid #212529" ;
@@ -207,11 +225,11 @@ signup_form.onsubmit = (event) => {
     if(name.value == ""){
         name.style = `border:1px solid red`;
         name.placeholder ='name is required';
-        reqname.innerHTML =`<p id='reqname' style="display:block; visibility: visible ;">Name is required</p>`;
+        reqname.innerHTML =`<p id='reqname' style="color:red">Name is required</p>`;
     }else{
         name.style = `border:1px solid #212529;`;
         name.placeholder ='name';
-        reqname.innerHTML =`<p id='reqname' style="display:none; visibility: hidden;"></p>`
+        reqname.innerHTML =`<p></p>`
      
     }
 
